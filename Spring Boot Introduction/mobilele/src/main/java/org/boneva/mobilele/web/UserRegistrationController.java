@@ -14,7 +14,6 @@ public class UserRegistrationController {
     private final UserService userService;
 
     public UserRegistrationController(UserService userService){
-
         this.userService = userService;
     }
 
@@ -26,6 +25,9 @@ public class UserRegistrationController {
 
     @PostMapping("/register")
     public String register(UserRegistrationDTO userRegistrationDTO) {
+
+        //TODO: Registration email with activation link
+
         userService.registerUser(userRegistrationDTO);
 
         return "redirect:/";
