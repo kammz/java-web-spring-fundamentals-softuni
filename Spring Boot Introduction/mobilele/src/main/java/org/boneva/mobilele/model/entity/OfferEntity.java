@@ -1,8 +1,6 @@
 package org.boneva.mobilele.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.boneva.mobilele.model.enums.EngineEnum;
 import org.boneva.mobilele.model.enums.TransmissionEnum;
 import org.hibernate.annotations.JdbcTypeCode;
@@ -24,8 +22,10 @@ public class OfferEntity extends BaseEntity {
     @ManyToOne
     private ModelEntity model;
 
+    @Enumerated(EnumType.STRING)
     private EngineEnum engine;
 
+    @Enumerated(EnumType.STRING)
     private TransmissionEnum transmission;
 
     private String imageUrl;
