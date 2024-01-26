@@ -8,5 +8,15 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: update
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: never
+  mvc:
+    hiddenmethod:
+      filter: enabled=true
 
 default.admin.pass: ${DEFAULT_ADMIN_PASS}
+logging:
+  level:
+    org.springframework: debug
